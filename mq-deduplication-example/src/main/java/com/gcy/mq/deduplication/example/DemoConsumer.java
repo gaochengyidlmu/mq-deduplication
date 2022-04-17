@@ -11,9 +11,6 @@ import org.springframework.stereotype.Component;
 public class DemoConsumer implements RocketMQListener<MessageExt> {
   @MQDeduplication
   public void onMessage(MessageExt msg) {
-    if (msg != null) {
-      throw new RuntimeException("123");
-    }
     System.out.println(msg);
   }
 }
