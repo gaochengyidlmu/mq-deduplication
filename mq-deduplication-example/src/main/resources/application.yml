@@ -1,0 +1,29 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: mq-deduplication-example
+
+rocketmq.name-server: localhost:9876
+# producer info
+rocketmq.producer.group: TestGrouper
+rocketmq.producer.sendMessageTimeout: 300000
+# consumer info
+rocketmq.consumer.group: DeduplicationGroup
+#rocketmq.consumer.topic: TopicTest
+# properties used in the application
+demo.rocketmq.topic: TopicTest
+demo.rocketmq.orderTopic: order-paid-topic
+demo.rocketmq.msgExtTopic: message-ext-topic
+demo.rocketmq.transTopic: spring-transaction-topic
+demo.rocketmq.topic.user: user-topic
+demo.rocketmq.bytesRequestTopic: bytesRequestTopic:tagA
+demo.rocketmq.stringRequestTopic: stringRequestTopic:tagA
+demo.rocketmq.objectRequestTopic: objectRequestTopic:tagA
+demo.rocketmq.genericRequestTopic: genericRequestTopic:tagA
+demo.rocketmq.extNameServer: 127.0.0.1:9876
+# default producer tls config
+rocketmq.producer.tls-enable: false
+# self ext producer tls config
+demo.rocketmq.ext.useTLS: false
